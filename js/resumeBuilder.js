@@ -10,7 +10,7 @@ var bio = {
 		"twitter" : "@clinterific",
 		"location" : "New York, NY"
 	},
-	"welcomeMessage" : "Hello! I am currently enrolled in the Front-End Web Development program with Udacity. My goal is to be well rounded to create robust, responisive designs.",
+	"welcomeMessage" : "Hello! I am currently enrolled in the Front-End Web Development program with Udacity. My goal is to be well rounded and create robust, responisive designs.",
 	"skills" : ["HTML", "CSS", "Sales", "Javascript"],
 	"display" : function(){
 		var formattedName = HTMLheaderName.replace("%data%", bio.name);
@@ -34,6 +34,11 @@ var bio = {
 						 .append(formattedTwitter)
 						 .append(formattedGitHub)
 						 .append(formattedLocation);
+		$("#footerContacts").append(formattedMobile)
+				 .append(formattedEmail)
+				 .append(formattedTwitter)
+				 .append(formattedGitHub)
+				 .append(formattedLocation);
 
 		if (bio.skills.length !== 0) {
 		            $('#header').append(HTMLskillsStart);
@@ -51,7 +56,7 @@ var projects = {
 			"title": "Precision Automotive",
 			"dates": "2015",
 			"description": "This project is for an auto-repair shop in Spring Hill, FL. It features a responsive web design with a mix of CSS and jQuery. The contact forms are done by me in PHP.",
-			"images": "images/precision.jpg"
+			"images": "images/precisionnew.png"
 		},
 		{
 			"title": "Be Fit With Josie",
@@ -135,18 +140,17 @@ var education = {
 
 		for (online in education.onlineCourses) {
 
-			
+			$('#onlineEducation').append(HTMLonlineClasses);
 
 			var formattedOnlineTitle = HTMLonlineTitle.replace("%data%", education.onlineCourses[online].title);
 			var formattedOnlineSchool = HTMLonlineSchool.replace("%data%", education.onlineCourses[online].school);
 			var formattedOnlineDates = HTMLonlineDates.replace("%data%", education.onlineCourses[online].dates);
 			var formattedOnlineURL = HTMLonlineURL.replace("%data%", education.onlineCourses[online].url);
 
-			$(".education-entry:last").append(formattedOnlineTitle + formattedOnlineSchool)
+			$(".onlineEducation-entry:last").append(formattedOnlineTitle + formattedOnlineSchool)
 									  .append(formattedOnlineDates)
 									  .append(formattedOnlineURL);
 		}
-		$('#education').append(HTMLonlineClasses);
     }
 };
 
